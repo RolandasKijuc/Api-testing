@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "37bd9861-3ae5-4726-b65e-cfcbcb740ff4",
+		"name": "AutomationExercise API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38004758"
+	},
+	"item": [
+		{
+			"name": "All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains products\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products).to.be.an('array');  // Check if 'products' is an array\r",
+							"    pm.expect(jsonData.products[0]).to.have.property('id');  // Check if each product has 'id' field\r",
+							"    pm.expect(jsonData.products[0]).to.have.property('name'); // Check if each product has 'name' field\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/productsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (even though it's an error)\", function () {\r",
+							"    pm.response.to.have.status(200);  // Verify the status code is 200\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains error code 405\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);  // Check if responseCode in body is 405\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct error message\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\"); // Check if the message is correct\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/productsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
