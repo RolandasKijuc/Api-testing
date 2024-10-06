@@ -255,6 +255,133 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "To Create/Register User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"User account created\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.message).to.eql(\"User created!\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John Wick",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "johnwick@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Mr",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "01",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "January",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "1990",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Wick",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "AK47",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "123 Main St",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "Apt 4B",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "USA",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "NY",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "New York",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "666666",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/createAccount",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"createAccount"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
