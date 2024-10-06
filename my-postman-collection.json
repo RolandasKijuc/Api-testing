@@ -264,9 +264,9 @@
 					"script": {
 						"exec": [
 							"pm.test(\"User account created\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
+							"    pm.response.to.have.status(200); \r",
 							"    const responseJson = pm.response.json();\r",
-							"    pm.expect(responseJson.message).to.eql(\"User created!\");\r",
+							"    pm.expect(responseJson.message).to.eql(\"User created!\"); \r",
 							"});\r",
 							""
 						],
@@ -378,6 +378,41 @@
 					"path": [
 						"api",
 						"createAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "To Delete User Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "johnwick@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/deleteAccount",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"deleteAccount"
 					]
 				}
 			},
