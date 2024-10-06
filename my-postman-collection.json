@@ -263,11 +263,23 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"// Test Script for Creating a User Account\r",
 							"pm.test(\"User account created\", function () {\r",
 							"    pm.response.to.have.status(200); \r",
 							"    const responseJson = pm.response.json();\r",
-							"    pm.expect(responseJson.message).to.eql(\"User created!\"); \r",
+							"    pm.expect(responseJson.message).to.eql(\"User created!\"); // Validate success message\r",
 							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
 							""
 						],
 						"type": "text/javascript",
@@ -385,6 +397,34 @@
 		},
 		{
 			"name": "To Delete User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Script for Deleting a User Account\r",
+							"pm.test(\"Delete account\", function () {\r",
+							"    pm.response.to.have.status(200); \r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.message).to.eql(\"Account deleted!\"); // Validate success message\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
