@@ -31,7 +31,7 @@ Before you begin, ensure you have the following installed on your machine:
 ## Set up
 1. Clone the repository to your local machine using Git or GitHub Desktop.
 Open the project in Visual Studio Code.
-2. Install Node.js: If you haven't installed it yet, download and install Node.js from the official website. This will also install npm (Node Package Manager) automatically.
+2. Install Node.js: If you haven't installed it yet, download and install Node.js from https://nodejs.org/. This will also install npm (Node Package Manager) automatically.
 3. Navigate to the project directory in your terminal
 
 ## Testing
