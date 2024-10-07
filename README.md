@@ -1,46 +1,55 @@
 <img width="132" alt="logo" src="https://github.com/user-attachments/assets/c0641cf3-4421-49be-b3db-c7f82cba3a97">
 
+# Automated Testing with Postman
 
-# Automation Exercise API Testing
+## Welcome!
 
-## 0. What are we testing and what is this about?
-This project consists of automated API tests for the Automation Exercise website. The tests cover various functionalities such as user account creation, product search, and user account deletion. The goal is to ensure that the API endpoints work correctly and respond with the expected results.
+This project focuses on testing different functionalities of the **Automation Exercise Website** through comprehensive API testing using **Postman**. Additionally, the project includes continuous integration (CI) with **GitHub Actions**.
 
-## 1. Requirements
-- Postman for testing API endpoints.
-- GitHub for version control.
-- Newman (optional) for running Postman collections in the command line.
+### 14 Scenarios Tested:
+- **API 1**: Get All Products List
+- **API 2**: POST To All Products List
+- **API 3**: Get All Brands List
+- **API 4**: PUT To All Brands List
+- **API 5**: POST To Search Product
+- **API 6**: POST To Search Product without search_product parameter
+- **API 7**: POST To Verify Login with valid details
+- **API 8**: POST To Verify Login without email parameter
+- **API 9**: DELETE To Verify Login
+- **API 10**: POST To Verify Login with invalid details
+- **API 11**: POST To Create/Register User Account
+- **API 12**: DELETE METHOD To Delete User Account
+- **API 13**: PUT METHOD To Update User Account
+- **API 14**: GET user account detail by email
 
-## 2. How to install
-1. **Clone the repository:**
-   - Go to your GitHub repository and copy the clone URL.
-   - Use the following command in your terminal or Git Bash:
-     ```bash
-     git clone <repository-url>
-     ```
+## Prerequisites
+Before you begin, ensure you have the following installed on your machine:
+- Node.js.
+- npm (Node Package Manager): Comes with Node.js installation.
+- Postman for testing API requests.
 
-2. **Install Newman (optional):**
-   - If you want to run the tests using Newman, install it via npm:
-     ```bash
-     npm install -g newman
-     ```
+## Set up
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies: `npm install`.
 
-## 3. How to run tests
-1. **Using Postman:**
-   - Open the Postman application.
-   - Import the Postman collection and environment provided in the repository.
-   - Run the collection to execute all tests.
+## Testing
+Test scenarios are available in `automation-exercise.postman_collection.json`, and you can run them using Postman.
 
-2. **Using Newman:**
-   - Navigate to the directory containing your Postman collection and run:
-     ```bash
-     newman run <collection-file.json>
-     ```
+### Importing Postman Collection
+1. From this repository, download `automation-exercise.postman_collection.json` file to your local machine.
+2. In Postman, click on the "Import" button located at the top left and drop `automation-exercise.postman_collection.json` file.
+3. Postman will automatically add the collection, and you will see all predefined API requests.
 
-## 4. Any issues with tests or website?
-- If you encounter issues with the tests failing, ensure that the expected response codes and messages are correct according to the API documentation.
-- Common issues may include:
-  - User already exists when trying to create an account.
-  - Invalid credentials during login tests.
-  - Deletion tests failing if the account does not exist.
+### Running Tests with Newman
+1. Open terminal window and execute the test script: `npm run test`.
+
+## CI Integration with GitHub Actions
+This project includes a GitHub Actions workflow that automatically runs the tests each time the main branch is updated.
+
+### GitHub Actions Workflow
+The CI process is defined in the `.github/workflows/main.yml` file.
+
+## How to View Test Results
+Test results can be viewed in the "Actions" tab of your GitHub repository. Each workflow run will show the logs of the test execution, including any failures or errors encountered during the test runs.
 
