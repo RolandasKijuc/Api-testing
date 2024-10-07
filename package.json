@@ -1,0 +1,15 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "<img width=\"132\" alt=\"logo\" src=\"https://github.com/user-attachments/assets/c0641cf3-4421-49be-b3db-c7f82cba3a97\">",
+  "main": "index.js",
+  "dependencies": {
+    "newman": "^6.2.1"
+  },
+  "scripts": {
+    "test": "newman run my-postman-collection.json"
+  },
+  "keywords": [],
+  "author": "Rolandas",
+  "license": "MIT"
+}
