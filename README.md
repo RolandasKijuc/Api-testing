@@ -29,15 +29,16 @@ Before you begin, ensure you have the following installed on your machine:
 - Postman for testing API requests.
 
 ## Set up
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
+1. Clone the repository to your local machine using Git or GitHub Desktop.
+Open the project in Visual Studio Code.
+2. Install Node.js: If you haven't installed it yet, download and install Node.js from the official website. This will also install npm (Node Package Manager) automatically.
+3. Navigate to the project directory in your terminal
 
 ## Testing
-Test scenarios are available in `automation-exercise.postman_collection.json`, and you can run them using Postman.
+Test scenarios are available in `my-postman-collection.json`, and you can run them using Postman.
 
 ### Importing Postman Collection
-1. From this repository, download `automation-exercise.postman_collection.json` file to your local machine.
+1. From this repository, download `my-postman-collection.json` file to your local machine.
 2. In Postman, click on the "Import" button located at the top left and drop `automation-exercise.postman_collection.json` file.
 3. Postman will automatically add the collection, and you will see all predefined API requests.
 
@@ -48,7 +49,7 @@ Test scenarios are available in `automation-exercise.postman_collection.json`, a
 This project includes a GitHub Actions workflow that automatically runs the tests each time the main branch is updated.
 
 ### GitHub Actions Workflow
-The CI process is defined in the `.github/workflows/main.yml` file.
+The CI process is defined in the `postman-tests.yml` file.
 
 ## How to View Test Results
 Test results can be viewed in the "Actions" tab of your GitHub repository. Each workflow run will show the logs of the test execution, including any failures or errors encountered during the test runs.
