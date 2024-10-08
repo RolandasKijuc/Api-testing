@@ -33,7 +33,7 @@ Test scenarios are available in `my-postman-collection.json`, and you can run th
 
 ### Importing Postman Collection
 1. From this repository, download `my-postman-collection.json` file to your local machine.
-2. In Postman, click on the "Import" button located at the top left and drop `automation-exercise.postman_collection.json` file.
+2. In Postman, click on the "Import" button located at the top left and drop `my-postman-collection.json` file.
 3. Postman will automatically add the collection, and you will see all predefined API requests.
 
 ### Running Tests with Newman
